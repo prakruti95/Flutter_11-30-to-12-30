@@ -1,0 +1,46 @@
+Daily Basis - 11:30 to 12:30[Lecture Time]
+Practice time - 2hr
+
+System Pass - tops?123
+Wifi -
+
+tops jio fiber 5G- tops@0987
+tops jio fiber - tops#0987
+
+Tops Career Center
+
+One Repository -> Flutter_Workspace[Public]
+
+================================================
+Command -> https://git-scm.com/downloads
+cd Desktop
+cd Foldername
+1.git init
+2.git add -A
+3.git status
+4.git commit -m "First Commit"
+5.git remote add origin https://github.com/prakrutitops/Java_Workspace_8-30-to-10-00.git
+6.git push origin master
+================================================
+
+Desktop Software
+https://desktop.github.com/download/
+
+Dart:
+
+1) 
+Editor -> https://www.jetbrains.com/idea/download/?section=windows
+[Community Edition]
+
+2)
+SDK-> Software Development Kit
+Dart sdk -> https://dart.dev/get-dart/archive
+[Download IA32 from stable channel]
+
+
+
+
+
+
+
+
