@@ -1,0 +1,23 @@
+call variable -> $name
+call Object -> ${s1.name}
+
+constant : 
+
+PI = 3.14;
+
+4 type of function
+
+1)with para with return type
+2)without para with return
+3)without return with para
+4)without return without para
+
+class Student
+{
+	Student(int a,int b)
+	{
+	}
+	Student(int c)
+	{
+	}
+}
