@@ -1,0 +1,10 @@
+1. Open App Icon Generator
+2. Upload your image there
+3. download Mac and Android Logo
+4. Copy all folders inside android folder and in project paste the folder in
+E:\splashapp1\android\app\src\main\res
+
+5.Copy Assest.xcassets folder and paste in 
+E:\splashapp1\ios\Runner
+
+Re run the project 
