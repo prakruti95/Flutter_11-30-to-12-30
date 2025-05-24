@@ -1,0 +1,46 @@
+1.
+Home screen with a GridView of 6–8 static images with titles.
+
+Each grid tile shows:
+
+Image thumbnail
+
+Short title (e.g., “Beach”)
+
+On tap:
+
+Navigate to DetailScreen
+
+Pass image & title
+
+DetailScreen shows full image with larger title & back button.
+
+
+2.
+
+
+Create a ProductGrid screen using GridView.builder.
+
+Each product card shows:
+
+Product image
+
+Title
+
+Heart icon to mark as favorite
+
+Clicking heart icon:
+
+Toggles favorite status
+
+Stores favorite product IDs in SharedPreferences
+
+On app restart, remember favorites using SharedPreferences.
+
+//Add a Favorites screen showing only favorite products (use filtering and pass list to new screen).
+
+
+3.
+Add 5 questions and 5 answers in list after completion of quiz it should shows total right number of 
+answers and that score should be stored in sharedprefrence give one button 
+which shows previous scores 
