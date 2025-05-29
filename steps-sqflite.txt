@@ -1,0 +1,12 @@
+1. Add Dependency
+2. Go in Main.dart file and call homepage
+3. Create 3 folder database,screens,widgets
+4. Inside Screens Create one homefile 
+5. in home file create only design
+-------------------Run the code ---------------------
+6. create mydrawer file inside Widget Folder 
+7. create db file inside database folder and follow all the steps
+8. create form and form validation in homepage.dart file and also call
+db file in homepage 
+8. call insert method 
+
