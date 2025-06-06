@@ -1,0 +1,18 @@
+Table name : smit_details
+
+Columns:
+id
+name
+surname
+email
+mobile
+password
+gender
+
+SQL -> Export
+
+-------------------------------------
+view.php file
+
+
+ 
