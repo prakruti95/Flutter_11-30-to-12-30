@@ -1,0 +1,16 @@
+Signup 
+Signin
+
+-> Validations
+-> Design
+-> Dashboard Screen
+-> Welcome Username
+-> Logout
+
+1. https://prakrutitech.buzz/Practical_Task/signup.php
+Para : name,surname,email,mobile,gender,password
+
+
+2. https://prakrutitech.buzz/Practical_Task/signin.php
+Para : email,password
+
