@@ -1,0 +1,47 @@
+Why you are choosing Flutter?
+Flutter vs react native
+Editors
+
+extension:
+Android - APK
+Iphone -  IPA
+SDK -
+JDK -
+
+Diffrence and current version:
+min SDK-> 
+target SDK
+Compile SDK->
+Dart SDK ->
+
+Website vs WebApp
+Dart Features:
+
+
+$name
+${s1.name}
+
+final keyword
+var and data type
+
+for(i=1;i<=10;i++)
+{
+	if(i==5)
+	{
+		//break;
+		continue;
+	}
+	print(i);
+}
+conditional statement
+break,continue
+
+Why Overloading is not supported?
+synchronous vs Asynchronous
+Why we are using async await
+Patterns
+
+
+
+
+
