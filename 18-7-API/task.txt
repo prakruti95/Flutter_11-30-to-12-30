@@ -1,0 +1,5 @@
+API->
+Splash Screen
+Login->email,password
+Signup->id,name,surname,email,password,gender,mobile
+Dashboard_Screen->SharedPrefrence[login,logout]
