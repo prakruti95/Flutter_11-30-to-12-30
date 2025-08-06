@@ -4,8 +4,7 @@ import 'api_Service.dart';
 import 'connectivity_helper.dart';
 import 'dart:async';
 
-void main()
-{
+void main() {
   runApp(MyApp());
 }
 
@@ -17,13 +16,11 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-class HomeScreen extends StatefulWidget
-{
+
+class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
-
 }
-
 
 class _HomeScreenState extends State<HomeScreen> {
   List<Map<String, dynamic>> users = [];
@@ -32,22 +29,35 @@ class _HomeScreenState extends State<HomeScreen> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
+  Timer? retryTimer;
+
   @override
-  void initState()
-  {
+  void initState() {
     super.initState();
-    ConnectivityHelper.monitorConnectivity();  // Monitor for connectivity changes
-    loadData();  // Load initial data
+    ConnectivityHelper.monitorConnectivity(); // Start monitoring connectivity
+    loadData(); // Load initial data
+
+    // Periodic retry sync every 1 minute (fallback if connectivity listener misses it)
+    retryTimer = Timer.periodic(Duration(minutes: 1), (_) async {
+      bool online = await ConnectivityHelper.isOnline();
+      if (online) {
+        await APIService.syncOfflineData();
+      }
+    });
   }
 
-  // This method will load data from both the API and the local database
+  @override
+  void dispose() {
+    retryTimer?.cancel();
+    super.dispose();
+  }
+
   Future<void> loadData() async {
     bool online = await ConnectivityHelper.isOnline();
 
     if (online) {
-      // Fetch data from API only if online
       final data = await APIService.fetchData();
-      await DBHelper.clearTable();  // Clear previous data to avoid duplicates
+      await DBHelper.clearTable();
       for (var user in data) {
         await DBHelper.insertUser({
           'id': user['id'],
@@ -66,7 +76,6 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
-  // Add a user to the database
   Future<void> addUser() async {
     final name = _nameController.text;
     final surname = _surnameController.text;
@@ -74,7 +83,6 @@ class _HomeScreenState extends State<HomeScreen> {
     final password = _passwordController.text;
 
     if (name.isEmpty || surname.isEmpty || email.isEmpty || password.isEmpty) {
-      // Show a simple validation message if any of the fields are empty
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Please fill all fields')));
       return;
     }
@@ -104,7 +112,7 @@ class _HomeScreenState extends State<HomeScreen> {
       });
     }
 
-    loadData();  // Reload data after adding the new user
+    loadData();
     _nameController.clear();
     _surnameController.clear();
     _emailController.clear();
@@ -144,10 +152,9 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Text('Add User'),
             ),
             SizedBox(height: 20),
-            // Button to manually refresh the ListView
             ElevatedButton(
               onPressed: loadData,
-              child: Text('Refresh Data'),  // Refresh button
+              child: Text('Refresh Data'),
             ),
             SizedBox(height: 20),
             Expanded(
